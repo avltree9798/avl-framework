@@ -14,4 +14,3 @@ Router::get('/admin', 'AdminController@index', 'admin.dashboard.index');
 Router::get('/admin/login', 'AdminController@login', 'admin.login');
 Router::post('/admin/do/login', 'AdminController@doLogin', 'admin.do.login');
 Router::get('/admin/logout', 'AdminController@doLogout', 'admin.do.logout');
-Router::get('/{test}/{testong}','MainController@passVar','www.test');

@@ -110,26 +110,23 @@ class Router
     {
         foreach ($this->routes as $route) {
             $parts = $this->routerPart($route);
-            $allUri = '';
+            $allUri = implode('',$this->routerPart($_SERVER['REQUEST_URI']));
             $allPart = '';
             foreach ($parts as $key => $part) {
                 if ($part != "*") {
                     preg_match('/{[^\s]+}/', $part, $matches);
                     if ($matches) {
                         $this->params[] = Router::uri($key);
-                        $allUri .= $part;
                         $allPart .= $part;
                     } else {
-                        $allUri .= Router::uri($key);
                         $allPart .= $part;
                     }
                 }
             }
-            if ($allUri == $allPart) {
+            if ($allPart == $allUri) {
                 return $route;
             }
         }
-
         return new RouteNotFound(404, isset($route) ? $route['url'] : $_SERVER['REQUEST_URI']);
     }
 }
