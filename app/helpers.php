@@ -35,3 +35,14 @@ if ( ! function_exists('route')) {
         return new RouteNotFound(404, $route);
     }
 }
+
+if ( ! function_exists('json')) {
+    /**
+     * @param mixed $json
+     * @return mixed
+     */
+    function json($json)
+    {
+        return json_decode(json_encode($json));
+    }
+}

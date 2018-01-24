@@ -108,6 +108,7 @@ class Router
      */
     protected function findRoute()
     {
+        $return = null;
         foreach ($this->routes as $route) {
             $parts = $this->routerPart($route);
             $allUri = implode('', $this->routerPart($_SERVER['REQUEST_URI']));
@@ -124,10 +125,23 @@ class Router
                 }
             }
             if ($allPart == $allUri) {
-                return $route;
+                $return = 403;
             }
+            if ($allPart . $route['type'] == $allUri . $_SERVER['REQUEST_METHOD']) {
+                $return = $route;
+                return $return;
+            }
+
+        }
+        if(is_null($return)){
+            $return = new RouteNotFound(404, $_SERVER['REQUEST_URI']);
+            $return->show();
+        }
+        if($return===403){
+            $return = new RouterMethodForbidden(403);
+            $return->show();
         }
 
-        return new RouteNotFound(404, isset($route) ? $route['url'] : $_SERVER['REQUEST_URI']);
+        return $return;
     }
 }

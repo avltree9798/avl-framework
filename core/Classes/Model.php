@@ -4,9 +4,9 @@ class Model
 {
 
     /**
-     * @var MYSQLDatabaseDriver
+     * @var \MYSQLDatabaseDriver
      */
-    public $model;
+    private $model;
 
     /**
      * @var string
@@ -26,5 +26,13 @@ class Model
         $this->model = new MYSQLDatabaseDriver();
         $this->model->connect($GLOBALS['config']['database']['hostname'], $GLOBALS['config']['database']['username'],
             $GLOBALS['config']['database']['password'], $GLOBALS['config']['database']['database']);
+    }
+
+    /**
+     * @return \MYSQLDatabaseDriver
+     */
+    public function getModel()
+    {
+        return $this->model;
     }
 }

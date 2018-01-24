@@ -15,7 +15,6 @@ class AVLError
     public function __construct($type)
     {
         $this->type = $type;
-        $this->show();
     }
 
     /**

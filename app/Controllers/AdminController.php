@@ -8,7 +8,7 @@ class AdminController extends Controller
         if ( ! Auth::user()) {
             URL::redirect(route('admin.login'));
         } else {
-
+            dd(Auth::user());
         }
     }
 
@@ -21,7 +21,7 @@ class AdminController extends Controller
     {
         $user = new User();
         Session::set('user', $user->auth(URL::post('email'), URL::post('password')), 10000000000);
-        dd(Session::get('user'));
+        dd(json(Session::get('user')));
     }
 
     public function doLogout()

@@ -7,11 +7,11 @@ class User extends Model
 
     public function auth($email, $password)
     {
-        $this->model->query('SELECT * FROM `users` WHERE `email` = ? AND `password` = ?', [
+        $this->getModel()->query('SELECT * FROM `users` WHERE `email` = ? AND `password` = ?', [
             $email,
             $password
         ]);
-        if ($row = $this->model->fetchObject(User::class)) {
+        if ($row = $this->getModel()->fetchObject(User::class)) {
             return $row;
         } else {
             return '';
