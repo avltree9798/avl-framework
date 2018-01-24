@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+$port = 8080;
+if($argc>=2){
+    $port = $argv[1];
+}
+echo 'Starting PHP server at port '.$port.PHP_EOL;
+system("php -S localhost:{$port}");

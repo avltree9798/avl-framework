@@ -15,4 +15,9 @@ class MainController extends Controller
     {
         dd('Lala');
     }
+
+    public function passVar($lala, $testong)
+    {
+        echo 'Halo '.$lala.' '.$testong.', nice too meet you ^_^!';
+    }
 }

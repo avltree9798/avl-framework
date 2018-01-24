@@ -8,6 +8,11 @@ class Router
     protected $routes;
 
     /**
+     * @var array
+     */
+    protected $params;
+
+    /**
      * Router constructor.
      */
     public function __construct()
@@ -19,7 +24,11 @@ class Router
             $controller = new $route['controller']();
             if (method_exists($controller, $method)) {
                 if ($route['type'] === $_SERVER['REQUEST_METHOD']) {
-                    $controller->$method();
+                    if (isset($this->params)) {
+                        call_user_func_array([$controller, $method], $this->params);
+                    } else {
+                        $controller->$method();
+                    }
                 } else {
                     new RouterMethodForbidden(403);
                 }
@@ -38,7 +47,6 @@ class Router
     public static function uri($part)
     {
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
-        $part++;
 
         return (isset($parts[$part])) ? $parts[$part] : '';
     }
@@ -106,8 +114,15 @@ class Router
             $allPart = '';
             foreach ($parts as $key => $part) {
                 if ($part != "*") {
-                    $allUri .= Router::uri($key);
-                    $allPart .= $part;
+                    preg_match('/{[^\s]+}/', $part, $matches);
+                    if ($matches) {
+                        $this->params[] = Router::uri($key);
+                        $allUri .= $part;
+                        $allPart .= $part;
+                    } else {
+                        $allUri .= Router::uri($key);
+                        $allPart .= $part;
+                    }
                 }
             }
             if ($allUri == $allPart) {
