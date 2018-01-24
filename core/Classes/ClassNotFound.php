@@ -1,5 +1,7 @@
 <?php
-class ClassNotFound extends AVLError{
+
+class ClassNotFound extends AVLError
+{
     /**
      * @inheritdoc
      */
@@ -7,7 +9,6 @@ class ClassNotFound extends AVLError{
     {
         http_response_code($this->type);
         echo "Class {$this->type} error";
-        die();        
+        die();
     }
 }
-?>

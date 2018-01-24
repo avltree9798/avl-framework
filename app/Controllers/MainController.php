@@ -1,10 +1,12 @@
 <?php
-class MainController extends Controller{
+
+class MainController extends Controller
+{
     public function index()
     {
         $name = Session::get('name');
         $data = [
-            'text'  =>  'Hello '.$name
+            'text' => 'Hello ' . $name
         ];
         View::load('main::index', $data);
     }
@@ -14,4 +16,3 @@ class MainController extends Controller{
         dd('Lala');
     }
 }
-?>

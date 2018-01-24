@@ -1,12 +1,14 @@
 <?php
-class MYSQLDatabaseDriver{
+
+class MYSQLDatabaseDriver
+{
     /**
      * @var mysqli
      */
     protected $socket;
 
     /**
-     * @var mixed|bool
+     * @var \mysqli_result|bool
      */
     protected $result;
 
@@ -25,7 +27,6 @@ class MYSQLDatabaseDriver{
      */
     public $num_rows;
 
-
     public function __construct()
     {
     }
@@ -33,10 +34,10 @@ class MYSQLDatabaseDriver{
     public function connect($host, $username, $password, $database = null)
     {
 
-        if(is_null($database)){
+        if (is_null($database)) {
             $this->socket = new mysqli($host, $username, $password);
-        }else{
-            $this->socket = new mysqli($host, $username, $password, $database);            
+        } else {
+            $this->socket = new mysqli($host, $username, $password, $database);
         }
     }
 
@@ -54,73 +55,80 @@ class MYSQLDatabaseDriver{
      */
     public function refValues($arr = [])
     {
-        if(strnatcmp(phpversion(), '5.3') >= 0)
-        {
+        if (strnatcmp(phpversion(), '5.3') >= 0) {
             $refs = [];
-            foreach($arr as $k=>$v){
+            foreach ($arr as $k => $v) {
                 $refs[$k] = &$arr[$k];
             }
+
             return $refs;
         }
+
         return $arr;
     }
 
     /**
      * @param string $query
      * @param array  $args
-     * @return mixed|bool
+     * @return \mysqli_result|bool
      */
     public function query($query, $args = null)
     {
-        if(is_null($args)){
+        if (is_null($args)) {
             $this->result = $this->socket->query($query);
             $this->current_field = $this->result->current_field;
             $this->lengths = $this->result->lengths;
             $this->num_rows = $this->result->num_rows;
+
             return $this->result;
-        }else{
-            if(!is_array($args)){
+        } else {
+            if ( ! is_array($args)) {
                 $args = [$args];
             }
-            if($stmt = $this->socket->prepare($query)){
+            if ($stmt = $this->socket->prepare($query)) {
                 $datatypes = '';
-                foreach($args as $value){
-                    if(is_int($value)){
+                foreach ($args as $value) {
+                    if (is_int($value)) {
                         $datatypes .= 'i';
-                    }else if(is_double($value)){
-                        $datatypes .= 'd';
-                    }else if(is_string($value)){
-                        $datatypes .= 's';
-                    }else{
-                        $datatypes .= 'b';
+                    } else {
+                        if (is_double($value)) {
+                            $datatypes .= 'd';
+                        } else {
+                            if (is_string($value)) {
+                                $datatypes .= 's';
+                            } else {
+                                $datatypes .= 'b';
+                            }
+                        }
                     }
                 }
                 array_unshift($args, $datatypes);
-                if(call_user_func_array([$stmt,'bind_param'], $this->refValues($args))){
+                if (call_user_func_array([$stmt, 'bind_param'], $this->refValues($args))) {
                     $stmt->execute();
                     $this->result = $stmt->get_result();
-                    if($this->result){
+                    if ($this->result) {
                         $this->current_field = $this->result->current_field;
                         $this->lengths = $this->result->lengths;
                         $this->num_rows = $this->result->num_rows;
-                    }else{
+                    } else {
                         $this->current_field = '';
                         $this->num_rows = 0;
                         $this->lengths = 0;
                     }
                     $this->error = $stmt->error;
-                    return $this->result;                    
-                }else{
+
+                    return $this->result;
+                } else {
                     $this->current_field = '';
                     $this->num_rows = 0;
                     $this->lengths = 0;
+
                     return false;
                 }
-            }else{
+            } else {
                 $this->current_field = '';
                 $this->num_rows = 0;
                 $this->lengths = 0;
-
             }
         }
     }
@@ -162,9 +170,9 @@ class MYSQLDatabaseDriver{
 
     public function fetchObject($class_name = 'stdClass', $params = null)
     {
-        if(is_null($params)){
+        if (is_null($params)) {
             return $this->result->fetch_object($class_name);
-        }else{
+        } else {
             return $this->result->fetch_object($class_name, $params);
         }
     }
@@ -190,16 +198,17 @@ class MYSQLDatabaseDriver{
     public function fetchAllKV()
     {
         $out = [];
-        while($row = $this->result->fetch_assoc()){
+        while ($row = $this->result->fetch_assoc()) {
             $out[] = $row;
         }
+
         return $out;
     }
 
-    public function __destruct(){
-        if(isset($this->socket) && isset($this->result)){
+    public function __destruct()
+    {
+        if (isset($this->socket) && isset($this->result)) {
             $this->socket->close();
         }
     }
 }
-?>

@@ -1,8 +1,9 @@
 <?php
-class Controller{
+
+class Controller
+{
     public function __construct()
     {
         $GLOBALS['instances'][] = &$this;
     }
 }
-?>

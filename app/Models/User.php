@@ -1,16 +1,19 @@
 <?php
-class User extends Model{
+
+class User extends Model
+{
 
     protected $table = 'users';
 
-    public function auth($email, $password){
-        $this->model->query('SELECT * FROM `users` WHERE `email` = ? AND `password` = ?',[
+    public function auth($email, $password)
+    {
+        $this->model->query('SELECT * FROM `users` WHERE `email` = ? AND `password` = ?', [
             $email,
             $password
         ]);
-        if($row = $this->model->fetchObject(User::class)){
+        if ($row = $this->model->fetchObject(User::class)) {
             return $row;
-        }else{
+        } else {
             return '';
         }
     }
@@ -23,4 +26,3 @@ class User extends Model{
         return $this->id;
     }
 }
-?>

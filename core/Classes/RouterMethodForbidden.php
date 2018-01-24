@@ -1,5 +1,7 @@
 <?php
-class RouterMethodForbidden extends AVLError{
+
+class RouterMethodForbidden extends AVLError
+{
     /**
      * @inheritdoc
      */
@@ -7,7 +9,6 @@ class RouterMethodForbidden extends AVLError{
     {
         http_response_code($this->type);
         echo "Router method forbidden";
-        die();        
+        die();
     }
 }
-?>

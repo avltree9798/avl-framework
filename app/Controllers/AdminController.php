@@ -1,12 +1,14 @@
 <?php
-class AdminController extends Controller{
+
+class AdminController extends Controller
+{
     public function index()
     {
         session_start();
-        if(!Auth::user()){
+        if ( ! Auth::user()) {
             URL::redirect(route('admin.login'));
-        }else{
-        
+        } else {
+
         }
     }
 
@@ -18,7 +20,7 @@ class AdminController extends Controller{
     public function doLogin()
     {
         $user = new User();
-        Session::set('user',$user->auth(URL::post('email'),URL::post('password')),10000000000);
+        Session::set('user', $user->auth(URL::post('email'), URL::post('password')), 10000000000);
         dd(Session::get('user'));
     }
 
@@ -28,4 +30,3 @@ class AdminController extends Controller{
         URL::redirect(route('www.index'));
     }
 }
-?>

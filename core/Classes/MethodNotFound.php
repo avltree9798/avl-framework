@@ -1,5 +1,7 @@
 <?php
-class MethodNotFound extends AVLError{
+
+class MethodNotFound extends AVLError
+{
     /**
      * @inheritdoc
      */
@@ -7,7 +9,6 @@ class MethodNotFound extends AVLError{
     {
         http_response_code($this->type);
         echo "Method {$this->type} error";
-        die();        
+        die();
     }
 }
-?>

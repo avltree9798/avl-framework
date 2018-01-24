@@ -1,5 +1,7 @@
 <?php
-class Model{
+
+class Model
+{
 
     /**
      * @var MYSQLDatabaseDriver
@@ -11,15 +13,13 @@ class Model{
      */
     protected $table;
 
+    /**
+     * Model constructor.
+     */
     public function __construct()
     {
         $this->model = new MYSQLDatabaseDriver();
-        $this->model->connect(
-            $GLOBALS['config']['database']['hostname'],
-            $GLOBALS['config']['database']['username'],
-            $GLOBALS['config']['database']['password'],
-            $GLOBALS['config']['database']['database']
-        );
+        $this->model->connect($GLOBALS['config']['database']['hostname'], $GLOBALS['config']['database']['username'],
+            $GLOBALS['config']['database']['password'], $GLOBALS['config']['database']['database']);
     }
 }
-?>

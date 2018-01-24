@@ -1,30 +1,32 @@
 <?php
-class Router{
+
+class Router
+{
     /**
      * @var array
      */
     protected $routes;
 
     /**
-     * Router Class Constructor.
+     * Router constructor.
      */
     public function __construct()
     {
         $this->routes = $GLOBALS['config']['routes'];
         $route = $this->findRoute();
         $method = $route['method'];
-        if(class_exists($route['controller'])){
+        if (class_exists($route['controller'])) {
             $controller = new $route['controller']();
-            if(method_exists($controller, $method)){
-                if($route['type'] === $_SERVER['REQUEST_METHOD']){
+            if (method_exists($controller, $method)) {
+                if ($route['type'] === $_SERVER['REQUEST_METHOD']) {
                     $controller->$method();
-                }else{
+                } else {
                     new RouterMethodForbidden(403);
                 }
-            }else{
+            } else {
                 new MethodNotFound(404);
             }
-        }else{
+        } else {
             new ClassNotFound(404);
         }
     }
@@ -37,7 +39,8 @@ class Router{
     {
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
         $part++;
-        return (isset($parts[$part])) ? $parts[$part]:'';
+
+        return (isset($parts[$part])) ? $parts[$part] : '';
     }
 
     /**
@@ -47,15 +50,15 @@ class Router{
      */
     private static function pushRoute($uri, $controller, $name, $type)
     {
-        $controller = explode('@',$controller);
+        $controller = explode('@', $controller);
         $class = $controller[0];
         $method = $controller[1];
         $GLOBALS['config']['routes'][] = [
-            'url'           => $uri,
-            'controller'    => $class,
-            'method'        => $method,
-            'type'          => $type,
-            'name'          => $name
+            'url'        => $uri,
+            'controller' => $class,
+            'method'     => $method,
+            'type'       => $type,
+            'name'       => $name
         ];
     }
 
@@ -64,7 +67,7 @@ class Router{
      * @param string $controller
      * @param string $name
      */
-    public static function get($uri, $controller, $name='')
+    public static function get($uri, $controller, $name = '')
     {
         self::pushRoute($uri, $controller, $name, 'GET');
     }
@@ -85,9 +88,10 @@ class Router{
      */
     protected function routerPart($route)
     {
-        if(is_array($route)){
+        if (is_array($route)) {
             $route = $route["url"];
         }
+
         return explode("/", $route);
     }
 
@@ -96,21 +100,21 @@ class Router{
      */
     protected function findRoute()
     {
-        foreach($this->routes as $route){
+        foreach ($this->routes as $route) {
             $parts = $this->routerPart($route);
             $allUri = '';
             $allPart = '';
-            foreach($parts as $key => $part){
-                if($part != "*"){
-                    $allUri.=Router::uri($key);
-                    $allPart.=$part;
+            foreach ($parts as $key => $part) {
+                if ($part != "*") {
+                    $allUri .= Router::uri($key);
+                    $allPart .= $part;
                 }
             }
-            if($allUri == $allPart){
+            if ($allUri == $allPart) {
                 return $route;
             }
         }
-        return new RouteNotFound(404, isset($route)?$route['url']:$_SERVER['REQUEST_URI']);
+
+        return new RouteNotFound(404, isset($route) ? $route['url'] : $_SERVER['REQUEST_URI']);
     }
 }
-?>

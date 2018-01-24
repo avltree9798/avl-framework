@@ -1,5 +1,7 @@
 <?php
-class RouteNotFound extends AVLError{
+
+class RouteNotFound extends AVLError
+{
     /**
      * @var string
      */
@@ -7,19 +9,20 @@ class RouteNotFound extends AVLError{
 
     /**
      * RouteNotFound Class Constructor.
-     * 
+     *
      * @param int    $type
      * @param string $route
      */
-    public function __construct($type, $route){
+    public function __construct($type, $route)
+    {
         $this->route = $route;
         parent::__construct($type);
     }
 
-    public function show(){
+    public function show()
+    {
         http_response_code($this->type);
         echo "Route {$this->type} error";
-        die();       
+        die();
     }
 }
-?>

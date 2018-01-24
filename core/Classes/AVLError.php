@@ -1,13 +1,15 @@
 <?php
-class AVLError{   
+
+class AVLError
+{
     /**
      * @var int
      */
     protected $type;
 
     /**
-     * Error Class Constructor.
-     * 
+     * AVLError constructor.
+     *
      * @param int $type
      */
     public function __construct($type)
@@ -23,7 +25,6 @@ class AVLError{
     {
         http_response_code($this->type);
         echo "{$this->type} error";
-        die();        
+        die();
     }
 }
-?>
