@@ -23,6 +23,9 @@
             require_once "{$app_path}Libs/{$class}.php";
         }else if(file_exists("{$app_path}Models/{$class}.php")){
             require_once "{$app_path}Models/{$class}.php";
+        }else if(file_exists("{$core_path}Classes/Exception/{$class}.php")) {
+            $instantiable = false;
+            require_once "{$core_path}Classes/Exception/{$class}.php";
         }
         if($instantiable){
             foreach($GLOBALS['instances'] as $instance){

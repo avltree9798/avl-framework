@@ -14,6 +14,11 @@ class Model
     protected $table;
 
     /**
+     * @var array
+     */
+    protected $hidden;
+
+    /**
      * Model constructor.
      */
     public function __construct()

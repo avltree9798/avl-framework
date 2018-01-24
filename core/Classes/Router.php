@@ -110,7 +110,7 @@ class Router
     {
         foreach ($this->routes as $route) {
             $parts = $this->routerPart($route);
-            $allUri = implode('',$this->routerPart($_SERVER['REQUEST_URI']));
+            $allUri = implode('', $this->routerPart($_SERVER['REQUEST_URI']));
             $allPart = '';
             foreach ($parts as $key => $part) {
                 if ($part != "*") {
@@ -127,6 +127,7 @@ class Router
                 return $route;
             }
         }
+
         return new RouteNotFound(404, isset($route) ? $route['url'] : $_SERVER['REQUEST_URI']);
     }
 }
