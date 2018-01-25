@@ -12,5 +12,7 @@
   ],
   "prefer-stable": true,
   "minimum-stability": "dev",
-  "require": {}
+  "require": {
+    "php": ">=5.4.0"
+  }
 }
