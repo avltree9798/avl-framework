@@ -10,5 +10,7 @@
       "email": "anthony@avlitsolution.com"
     }
   ],
+  "prefer-stable": true,
+  "minimum-stability": "dev",
   "require": {}
 }
