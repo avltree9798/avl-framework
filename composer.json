@@ -1,13 +1,14 @@
 {
-    "name": "avlsoft/avl-framework",
-    "description": "Framework for human beings, inspired by Gary Mathis (https://www.youtube.com/channel/UCtDDxnmPWXcTj1GSrkFMqKg) and Laravel",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Anthony Viriya",
-            "email": "anthony@avlitsolution.com"
-        }
-    ],
-    "require": {}
+  "name": "avlsoft/avl-framework",
+  "description": "Framework for human beings, inspired by Gary Mathis (https://www.youtube.com/channel/UCtDDxnmPWXcTj1GSrkFMqKg) and Laravel",
+  "type": "library",
+  "license": "MIT",
+  "version": "0.0.2",
+  "authors": [
+    {
+      "name": "Anthony Viriya",
+      "email": "anthony@avlitsolution.com"
+    }
+  ],
+  "require": {}
 }
