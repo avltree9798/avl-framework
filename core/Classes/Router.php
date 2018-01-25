@@ -13,6 +13,22 @@ class Router
     protected $params;
 
     /**
+     * @var array
+     */
+    protected $middlewares = [
+        'csrf' => CsrfValidation::class
+    ];
+
+    /**
+     * @var array
+     */
+    protected $middleware_route = [
+        'csrf' => [
+            'admin.do.login'
+        ]
+    ];
+
+    /**
      * Router constructor.
      */
     public function __construct()
@@ -104,7 +120,7 @@ class Router
     }
 
     /**
-     * @return array
+     * @return int|\RouterMethodForbidden|\RouteNotFound|array
      */
     protected function findRoute()
     {
@@ -112,6 +128,7 @@ class Router
         foreach ($this->routes as $route) {
             $parts = $this->routerPart($route);
             $allUri = implode('', $this->routerPart($_SERVER['REQUEST_URI']));
+            $allUri = explode('?', $allUri)[0];
             $allPart = '';
             foreach ($parts as $key => $part) {
                 if ($part != "*") {
@@ -128,16 +145,25 @@ class Router
                 $return = 403;
             }
             if ($allPart . $route['type'] == $allUri . $_SERVER['REQUEST_METHOD']) {
+                foreach ($this->middleware_route as $middleware => $mr) {
+                    if (in_array($route['name'], $mr)) {
+                        /**
+                         * @var \Middleware @md
+                         */
+                        $md = new $this->middlewares[$middleware]();
+                        $md->handle();
+                    }
+                }
                 $return = $route;
+
                 return $return;
             }
-
         }
-        if(is_null($return)){
+        if (is_null($return)) {
             $return = new RouteNotFound(404, $_SERVER['REQUEST_URI']);
             $return->show();
         }
-        if($return===403){
+        if ($return === 403) {
             $return = new RouterMethodForbidden(403);
             $return->show();
         }

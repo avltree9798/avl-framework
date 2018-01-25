@@ -6,27 +6,30 @@ class AdminController extends Controller
     {
         session_start();
         if ( ! Auth::user()) {
-            URL::redirect(route('admin.login'));
+//            Request::redirect(route('admin.login'));
+            dd(Request::all());
         } else {
-            dd(Auth::user());
+            dd(Request::only([
+                'ken'
+            ]));
         }
     }
 
     public function login()
     {
-        View::load('admin::login');
+        View::load('admin.login');
     }
 
     public function doLogin()
     {
         $user = new User();
-        Session::set('user', $user->auth(URL::post('email'), URL::post('password')), 10000000000);
+        Session::set('user', $user->auth(Request::post('email'), Request::post('password')), 10000000000);
         dd(json(Session::get('user')));
     }
 
     public function doLogout()
     {
         Session::endSession();
-        URL::redirect(route('www.index'));
+        Request::redirect(route('www.index'));
     }
 }

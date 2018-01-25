@@ -7,9 +7,7 @@ class Session
      */
     public function __construct()
     {
-        if ( ! isset($_SESSION)) {
-            session_start();
-        }
+        $this->start();
         foreach ($_COOKIE as $key => $value) {
             if ( ! isset($_SESSION[$key])) {
                 json_decode($value);
@@ -19,6 +17,13 @@ class Session
                     $_SESSION[$key] = $value;
                 }
             }
+        }
+    }
+
+    public function start()
+    {
+        if ( ! isset($_SESSION)) {
+            session_start();
         }
     }
 
@@ -49,6 +54,9 @@ class Session
      */
     public static function get($key)
     {
+        if ( ! isset($_SESSION)) {
+            session_start();
+        }
         if (isset($_SESSION[Session::generateSessionKey($key)])) {
             return $_SESSION[Session::generateSessionKey($key)];
         } else {
@@ -63,6 +71,9 @@ class Session
      */
     public static function set($key, $value, $ttl = 0)
     {
+        if ( ! isset($_SESSION)) {
+            session_start();
+        }
         $_SESSION[Session::generateSessionKey($key)] = $value;
         if ($ttl === 0) {
             if (is_object($value) || is_array($value)) {

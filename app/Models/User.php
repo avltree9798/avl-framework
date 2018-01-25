@@ -14,7 +14,7 @@ class User extends Model
         if ($row = $this->getModel()->fetchObject(User::class)) {
             return $row;
         } else {
-            return '';
+            return [];
         }
     }
 

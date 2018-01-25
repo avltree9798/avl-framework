@@ -1,9 +1,35 @@
 #!/usr/bin/env php
 <?php
-
-$port = 8080;
-if($argc>=2){
-    $port = $argv[1];
+function delete($directory){
+	$files = glob($directory);
+    foreach ($files as $file){
+        if(is_file($file)){
+			unlink($file);
+		}
+	}
 }
-echo 'Starting PHP server at port '.$port.PHP_EOL;
-system("php -S localhost:{$port}");
+$port = 8080;
+if ($argc >= 2) {
+    $command = $argv[1];
+    if ($command === 'serve') {
+        $port = $argc >= 3 && is_int($argv[3]) ? $argv[2] : $port;
+        echo 'Starting PHP server at port ' . $port . PHP_EOL;
+        system("php -S localhost:{$port}");
+    } else {
+        $action = explode(':', $command);
+        switch ($action[0]){
+			case 'clear':{
+				switch ($action[1]){
+					case 'cache':{
+						echo 'Clearing Cache'.PHP_EOL;
+						delete("caches/*");
+						delete("caches/views/*");
+						echo 'Cache Cleared'.PHP_EOL;
+					}
+				}
+				break;
+			}
+		}
+    }
+}
+

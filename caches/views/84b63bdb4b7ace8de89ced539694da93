@@ -4,7 +4,8 @@
     </head>
     <body>
         <h1>Welcome to AVL Framework</h1>
-        <h3><?php echo $text; ?></h3>
-        <img src='<?php echo assets('img/apple.png'); ?>'/>
+        <h3><?php e( $text ); ?></h3>
+		<img src="<?php e( assets('img/apple.png') ); ?>"/>
     </body>
+<marquee>今日から始まる物語</marquee>
 </html>

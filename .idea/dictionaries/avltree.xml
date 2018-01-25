@@ -2,6 +2,8 @@
   <dictionary name="avltree">
     <words>
       <w>datatypes</w>
+      <w>htmlphp</w>
+      <w>middlewares</w>
     </words>
   </dictionary>
 </component>

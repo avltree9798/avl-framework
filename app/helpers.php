@@ -46,3 +46,48 @@ if ( ! function_exists('json')) {
         return json_decode(json_encode($json));
     }
 }
+
+if ( ! function_exists('abort')) {
+    /**
+     * @param int    $status
+     * @param string $message
+     */
+    function abort($status, $message)
+    {
+        echo $message;
+        http_response_code($status);
+        die($status);
+    }
+}
+
+if ( ! function_exists('csrf_token')) {
+
+    /**
+     * @return string
+     */
+    function csrf_token()
+    {
+        return Session::get('csrf');
+    }
+}
+
+if ( ! function_exists('csrf_field')) {
+
+    /**
+     * @return string
+     */
+    function csrf_field()
+    {
+        return '<input type="hidden" name="csrf_token" value="' . csrf_token() . '">';
+    }
+}
+
+if ( ! function_exists('e')) {
+    /**
+     * @param string $output
+     */
+    function e($output)
+    {
+        echo htmlentities($output);
+    }
+}
