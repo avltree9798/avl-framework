@@ -36,6 +36,7 @@ class Compiler
     {
         $contents = file_get_contents($viewFile);
         $contents = preg_replace('/{{(.*?)}}/', '<?php e($1); ?>', $contents);
+        $contents = preg_replace('/{!!(.*?)!!}/', '<?php echo $1; ?>', $contents);
         $self = $this;
         $contents = preg_replace_callback('#@include\(\'(.*?)\'\)#', function ($matches) use (&$self) {
             $str = $matches[0];

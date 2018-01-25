@@ -1,6 +1,8 @@
 <?php
 
 error_reporting(E_ALL);
+ini_set("log_errors", 1);
+date_default_timezone_set('Asia/Jakarta');
 ini_set('display_errors', 1);
 $GLOBALS['config'] = [
     'appName'       => 'AVL Framework',
@@ -12,8 +14,9 @@ $GLOBALS['config'] = [
         'core'       => 'core/',
         'index'      => 'index.avl.php',
         'view'       => 'resources/views/',
-        'cache'      => 'caches/',
-        'cache_view' => 'caches/views/'
+        'cache'      => 'storage/caches/',
+        'cache_view' => 'storage/caches/views/',
+        'log_file'   => 'storage/logs/avl-'.time().'.log'
     ],
     'defaults'      => [
         'controller' => 'Main',
@@ -29,6 +32,6 @@ $GLOBALS['config'] = [
         'database' => 'pos'
     ]
 ];
-date_default_timezone_set('Asia/Jakarta');
+ini_set("error_log", $GLOBALS['config']['path']['log_file']);
 $GLOBALS['instances'] = [];
 require_once $GLOBALS['config']['path']['core'] . 'autoload.php';

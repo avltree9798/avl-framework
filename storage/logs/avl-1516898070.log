@@ -1,0 +1,10 @@
+[25-Jan-2018 23:34:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ase() in /home/avltree/anjay/AVLFramework/storage/caches/views/84b63bdb4b7ace8de89ced539694da93:8
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Template/Compiler.php(63): require_once()
+#1 /home/avltree/anjay/AVLFramework/core/Classes/View.php(22): Compiler->render()
+#2 /home/avltree/anjay/AVLFramework/app/Controllers/MainController.php(11): View::load('main/index.avl....', Array)
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): MainController->index()
+#4 /home/avltree/anjay/AVLFramework/core/autoload.php(71): Router->__construct()
+#5 /home/avltree/anjay/AVLFramework/index.php(37): require_once('/home/avltree/a...')
+#6 {main}
+  thrown in /home/avltree/anjay/AVLFramework/storage/caches/views/84b63bdb4b7ace8de89ced539694da93 on line 8
