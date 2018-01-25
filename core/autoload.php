@@ -69,4 +69,3 @@
     require_once $GLOBALS['config']['path']['app'].'routes.php';
     require_once $GLOBALS['config']['path']['app'].'helpers.php';
     new Router();
-?>

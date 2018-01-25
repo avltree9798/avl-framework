@@ -8,12 +8,7 @@ class View
      */
     public static function load($viewFile, $viewVars = [])
     {
-        srand(time());
-        $data = [
-            'key' => bin2hex(random_bytes(32)),
-            'iv'  => rand(0, 10101010)
-        ];
-        Session::set('csrf', base64_encode(json_encode($data)));
+        generate_csrf_token();
         $viewFile = str_replace(".", "/", $viewFile);
         $viewFile .= '.avl.php';
         $fileName = $GLOBALS['config']['path']['view'] . $viewFile;

@@ -91,3 +91,15 @@ if ( ! function_exists('e')) {
         echo htmlentities($output);
     }
 }
+
+if ( ! function_exists('generate_csrf_token')) {
+    function generate_csrf_token()
+    {
+        srand(time());
+        $data = [
+            'key' => bin2hex(random_bytes(32)),
+            'iv'  => rand(0, 10101010)
+        ];
+        Session::set('csrf', base64_encode(json_encode($data)));
+    }
+}

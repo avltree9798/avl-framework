@@ -6,8 +6,7 @@ class AdminController extends Controller
     {
         session_start();
         if ( ! Auth::user()) {
-//            Request::redirect(route('admin.login'));
-            dd(Request::all());
+            Request::redirect(route('admin.login'));
         } else {
             dd(Request::only([
                 'ken'

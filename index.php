@@ -16,7 +16,8 @@ $GLOBALS['config'] = [
         'view'       => 'resources/views/',
         'cache'      => 'storage/caches/',
         'cache_view' => 'storage/caches/views/',
-        'log_file'   => 'storage/logs/avl-'.time().'.log'
+        'log_file'   => 'storage/logs/avl-' . date('Y-m-d') . '.log',
+        'session'    => 'storage/sessions/'
     ],
     'defaults'      => [
         'controller' => 'Main',
@@ -32,6 +33,7 @@ $GLOBALS['config'] = [
         'database' => 'pos'
     ]
 ];
+ini_set('session.save_path', $GLOBALS['config']['path']['session']);
 ini_set("error_log", $GLOBALS['config']['path']['log_file']);
 $GLOBALS['instances'] = [];
 require_once $GLOBALS['config']['path']['core'] . 'autoload.php';

@@ -13,7 +13,7 @@ if ($argc >= 2) {
     $command = $argv[1];
     if ($command === 'serve') {
         $port = $argc >= 3 && is_int($argv[3]) ? $argv[2] : $port;
-        echo 'Starting PHP server at port ' . $port . PHP_EOL;
+        echo 'Starting AVL Framework PHP server at port ' . $port . PHP_EOL;
         system("php -S localhost:{$port}");
     } else {
         $action = explode(':', $command);
@@ -22,9 +22,16 @@ if ($argc >= 2) {
 				switch ($action[1]){
 					case 'cache':{
 						echo 'Clearing Cache'.PHP_EOL;
-						delete("caches/*");
-						delete("caches/views/*");
+						delete("storage/caches/*");
+						delete("storage/caches/views/*");
 						echo 'Cache Cleared'.PHP_EOL;
+						break;
+					}
+					case 'session':{
+                        echo 'Clearing Session'.PHP_EOL;
+                        delete("storage/sessions/*");
+                        echo 'Session Cleared'.PHP_EOL;
+						break;
 					}
 				}
 				break;
