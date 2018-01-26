@@ -8,4 +8,5 @@
 		<img src="<?php e( assets('img/apple.png') ); ?>"/>
     </body>
 <marquee>今日から始まる物語</marquee>
+<marquee>日本語</marquee>
 </html>

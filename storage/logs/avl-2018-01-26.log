@@ -121,3 +121,227 @@ Stack trace:
 #2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
 #3 {main}
   thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:32:39 Asia/Jakarta] PHP Notice:  Undefined property: Sales::$user in /home/avltree/anjay/AVLFramework/app/Models/Sales.php on line 23
+[26-Jan-2018 20:32:56 Asia/Jakarta] PHP Notice:  Undefined offset: 0 in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:32:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getUser() on null in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:33:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:85
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(179): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(43): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(102): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(128): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(43): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(102): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 85
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:34:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:84
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(178): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(127): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 84
+[26-Jan-2018 20:34:36 Asia/Jakarta] PHP Notice:  Undefined property: User::$sales in /home/avltree/anjay/AVLFramework/app/Models/User.php on line 46
+[26-Jan-2018 20:34:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getUser() on null in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:36:25 Asia/Jakarta] PHP Notice:  Undefined property: User::$sales in /home/avltree/anjay/AVLFramework/app/Models/User.php on line 46
+[26-Jan-2018 20:36:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getUser() on null in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:36:26 Asia/Jakarta] PHP Notice:  Undefined property: User::$sales in /home/avltree/anjay/AVLFramework/app/Models/User.php on line 46
+[26-Jan-2018 20:36:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getUser() on null in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:84
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(177): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(100): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(126): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(100): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 84
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 80
+[26-Jan-2018 20:37:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:84
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(177): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(100): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(126): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(84): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(100): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 84
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:37:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:85
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(178): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(127): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 85
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$hidden in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 81
+[26-Jan-2018 20:38:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::boot() in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:85
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(178): Model::makeObject(Array)
+#1 /home/avltree/anjay/AVLFramework/app/Models/Sales.php(18): Model->belongsTo('User', 'cashier_id')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): Sales->user()
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(Array, 'Sales')
+#5 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(127): Model::makeArrayOfObject(Array, 'Sales')
+#6 /home/avltree/anjay/AVLFramework/app/Models/User.php(17): Model->hasMany('Sales', 'cashier_id')
+#7 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(42): User->sales()
+#8 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(85): Model->boot()
+#9 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(101): Model::makeObject(A in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 85
+[26-Jan-2018 20:44:08 Asia/Jakarta] PHP Notice:  Undefined property: User::$sales in /home/avltree/anjay/AVLFramework/app/Models/User.php on line 46
+[26-Jan-2018 20:44:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getUser() on null in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 20:47:24 Asia/Jakarta] PHP Warning:  The magic method __get() must have public visibility and cannot be static in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 33
+[26-Jan-2018 20:47:24 Asia/Jakarta] PHP Fatal error:  Method Model::__get() must take exactly 1 argument in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 35
+[26-Jan-2018 20:47:48 Asia/Jakarta] PHP Fatal error:  Method Model::__get() must take exactly 1 argument in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 35

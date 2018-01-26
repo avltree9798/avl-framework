@@ -12,4 +12,14 @@ class Sales extends Model
      * @var string
      */
     protected $table = 'sales';
+
+    protected function user()
+    {
+        return $this->belongsTo(User::class,'cashier_id');
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

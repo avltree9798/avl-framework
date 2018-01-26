@@ -28,21 +28,13 @@ class Model
         self::$query->connect($GLOBALS['config']['database']['hostname'], $GLOBALS['config']['database']['username'],
             $GLOBALS['config']['database']['password'], $GLOBALS['config']['database']['database']);
         Session::set('class-' . static::class, $this);
-        $this->boot();
     }
 
-    public function boot()
+    public function __get($prop)
     {
         if (isset($this->id)) {
-            $methods = get_class_methods(static::class);
-            foreach ($methods as $method) {
-                if (substr($method, 0, 3) == 'get') {
-                    $call = substr($method, 3, strlen($method) - 3);
-                    $call = lcfirst(ucwords($call));
-                    if (method_exists($this, $call)) {
-                        $this->$call();
-                    }
-                }
+            if (method_exists($this, $prop)) {
+                $this->$prop();
             }
         }
     }
@@ -82,7 +74,6 @@ class Model
                 $object->$key = $value;
             }
         }
-        $object->boot();
 
         return $object;
     }
@@ -146,6 +137,32 @@ class Model
              */
             $class = new $relation();
             $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $this->table . '`.`' . $primaryKey . '` = `' . $class->table . '`.`' . $foreignKey . '` WHERE `' . $this->table . '`.`' . $primaryKey . '` = ?';
+            self::$query->query($query, [
+                $this->$primaryKey
+            ]);
+            $data = self::$query->fetchAllKV()[0];
+            $data = self::makeObject($data);
+            $this->$propsName = $data;
+        }
+
+        return $this->$propsName;
+    }
+
+    /**
+     * @param string $relation
+     * @param string $foreignKey
+     * @param string $primaryKey
+     * @return object|\stdClass
+     */
+    protected function belongsTo($relation = '', $foreignKey = '', $primaryKey = 'id')
+    {
+        $propsName = debug_backtrace()[1]['function'];
+        if ( ! isset($this->$propsName)) {
+            /**
+             * @var \Model $class
+             */
+            $class = new $relation();
+            $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $class->table . '`.`' . $primaryKey . '` = `' . $this->table . '`.`' . $foreignKey . '` WHERE `' . $class->table . '`.`' . $primaryKey . '` = ?';
             self::$query->query($query, [
                 $this->$primaryKey
             ]);
