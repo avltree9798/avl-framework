@@ -43,6 +43,6 @@ class User extends Model
 
     public function getSales()
     {
-        return $this->sales();
+        return $this->sales;
     }
 }
