@@ -6,9 +6,9 @@ class AdminController extends Controller
     {
         session_start();
         if ( ! Auth::user()) {
-            Request::redirect(route('admin.login'));
+            Response::redirect(route('admin.login'));
         } else {
-            dd(Auth::user());
+            return Response::json(Auth::user());
         }
     }
 
@@ -27,6 +27,6 @@ class AdminController extends Controller
     public function doLogout()
     {
         Session::endSession();
-        Request::redirect(route('www.index'));
+        Response::redirect(route('www.index'));
     }
 }

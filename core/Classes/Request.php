@@ -104,19 +104,4 @@ class Request
         return $prefix . $append;
     }
 
-    /**
-     * @param string $to
-     * @param bool   $exit
-     */
-    public static function redirect($to, $exit = true)
-    {
-        if (headers_sent()) {
-            echo '<script>document.location="' . $to . '"</script>';
-        } else {
-            header('Location: ' . $to);
-        }
-        if ($exit) {
-            die();
-        }
-    }
 }
