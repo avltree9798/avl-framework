@@ -4,3 +4,120 @@
 [26-Jan-2018 01:47:12 Asia/Jakarta] PHP Warning:  session_start(): Failed to read session data: files (path: storage/sessions/avl) in /home/avltree/anjay/AVLFramework/core/Classes/Session.php on line 26
 [26-Jan-2018 01:47:27 Asia/Jakarta] PHP Warning:  session_start(): open(storage/sessions/avl/sess_i996jsp2trn6stlborhbjh37rq, O_RDWR) failed: No such file or directory (2) in /home/avltree/anjay/AVLFramework/core/Classes/Session.php on line 26
 [26-Jan-2018 01:47:27 Asia/Jakarta] PHP Warning:  session_start(): Failed to read session data: files (path: storage/sessions/avl) in /home/avltree/anjay/AVLFramework/core/Classes/Session.php on line 26
+[26-Jan-2018 02:11:21 Asia/Jakarta] PHP Fatal error:  Dynamic class names are not allowed in compile-time ::class fetch in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 54
+[26-Jan-2018 02:12:39 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:12:49 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:13:01 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:13:02 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:14:13 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:14:27 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:15:48 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:15:57 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:18:43 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:19:06 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:21:03 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:23:16 Asia/Jakarta] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 211
+[26-Jan-2018 02:23:16 Asia/Jakarta] PHP Notice:  Undefined property: MYSQLDatabaseDriver::$model in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 72
+[26-Jan-2018 02:23:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:72
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/app/Controllers/MainController.php(12): Model::all()
+#1 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): MainController->index()
+#2 /home/avltree/anjay/AVLFramework/core/autoload.php(71): Router->__construct()
+#3 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#4 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 72
+[26-Jan-2018 02:41:08 Asia/Jakarta] PHP Notice:  Trying to get property 'current_field' of non-object in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 79
+[26-Jan-2018 02:41:08 Asia/Jakarta] PHP Notice:  Trying to get property 'lengths' of non-object in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 80
+[26-Jan-2018 02:41:08 Asia/Jakarta] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 81
+[26-Jan-2018 02:41:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php:201
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(88): MYSQLDatabaseDriver->fetchAllKV()
+#1 /home/avltree/anjay/AVLFramework/core/Classes/Auth.php(28): Model::execute()
+#2 /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php(24): Auth::attempt('anthony@avlitso...', 'leonie')
+#3 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->doLogin()
+#4 /home/avltree/anjay/AVLFramework/core/autoload.php(71): Router->__construct()
+#5 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#6 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/MYSQLDatabaseDriver.php on line 201
+[26-Jan-2018 02:45:02 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '$model' (T_VARIABLE), expecting ';' in /home/avltree/anjay/AVLFramework/core/Classes/Auth.php on line 30
+[26-Jan-2018 02:45:10 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '{' in /home/avltree/anjay/AVLFramework/core/Classes/Auth.php on line 30
+[26-Jan-2018 02:45:21 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '$model' (T_VARIABLE), expecting ';' in /home/avltree/anjay/AVLFramework/core/Classes/Auth.php on line 30
+[26-Jan-2018 02:47:04 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '$model' (T_VARIABLE), expecting ';' in /home/avltree/anjay/AVLFramework/core/Classes/Auth.php on line 30
+[26-Jan-2018 03:37:51 Asia/Jakarta] PHP Fatal error:  Cannot re-assign $this in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 43
+[26-Jan-2018 12:48:15 Asia/Jakarta] PHP Notice:  Undefined property: User::$sales in /home/avltree/anjay/AVLFramework/app/Models/User.php on line 39
+[26-Jan-2018 12:58:14 Asia/Jakarta] PHP Notice:  Undefined property: User::$id in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 114
+[26-Jan-2018 12:58:14 Asia/Jakarta] PHP Notice:  Undefined property: User::$id in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 114
+[26-Jan-2018 12:59:54 Asia/Jakarta] PHP Notice:  Undefined property: User::$id in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 114
+[26-Jan-2018 13:01:23 Asia/Jakarta] PHP Warning:  session_start(): Failed to decode session object. Session has been destroyed in /home/avltree/anjay/AVLFramework/core/Classes/Session.php on line 58
+[26-Jan-2018 13:01:23 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '=' in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 195
+[26-Jan-2018 13:01:35 Asia/Jakarta] PHP Warning:  hash_equals(): Expected user_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[26-Jan-2018 13:06:14 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting variable (T_VARIABLE) or '$' in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 24
+[26-Jan-2018 13:16:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:88
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(110): Model::makeObject(Array, 'User')
+#1 /home/avltree/anjay/AVLFramework/core/Classes/Model.php(212): Model::makeArrayOfObject(Array)
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Auth.php(29): Model::execute()
+#3 /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php(23): Auth::attempt('anthony@avlitso...', 'leonie')
+#4 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->doLogin()
+#5 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#6 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#7 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 88
+[26-Jan-2018 13:27:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function boot() on array in /home/avltree/anjay/AVLFramework/core/Classes/Model.php:202
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Auth.php(29): Model::execute()
+#1 /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php(23): Auth::attempt('admin@pos.com', '$2y$10$Td4Hv/X....')
+#2 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->doLogin()
+#3 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#4 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#5 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 202
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:27:56 Asia/Jakarta] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/avltree/anjay/AVLFramework/core/Classes/Model.php on line 79
+[26-Jan-2018 13:30:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getSales() on array in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 13:31:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getSales() on array in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11
+[26-Jan-2018 13:31:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getSales() on array in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php:11
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(46): AdminController->index()
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): Router->__construct()
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/app/Controllers/AdminController.php on line 11

@@ -5,17 +5,16 @@ class User extends Model
 
     protected $table = 'users';
 
-    public function auth($email, $password)
+    /**
+     * @var array
+     */
+    protected $hidden = [
+        'password'
+    ];
+
+    protected function sales()
     {
-        $this->getModel()->query('SELECT * FROM `users` WHERE `email` = ? AND `password` = ?', [
-            $email,
-            $password
-        ]);
-        if ($row = $this->getModel()->fetchObject(User::class)) {
-            return $row;
-        } else {
-            return [];
-        }
+        return $this->hasMany(Sales::class, 'cashier_id');
     }
 
     /**
@@ -24,5 +23,26 @@ class User extends Model
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getSales()
+    {
+        return $this->sales();
     }
 }

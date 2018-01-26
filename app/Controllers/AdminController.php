@@ -8,9 +8,7 @@ class AdminController extends Controller
         if ( ! Auth::user()) {
             Request::redirect(route('admin.login'));
         } else {
-            dd(Request::only([
-                'ken'
-            ]));
+            dd(Auth::user()->getSales());
         }
     }
 
@@ -21,9 +19,9 @@ class AdminController extends Controller
 
     public function doLogin()
     {
-        $user = new User();
-        Session::set('user', $user->auth(Request::post('email'), Request::post('password')), 10000000000);
-        dd(json(Session::get('user')));
+        $user = Auth::attempt(Request::post('email'), Request::post('password'));
+        Session::set('user', $user, 10000000000);
+        dd(Session::get('user'));
     }
 
     public function doLogout()

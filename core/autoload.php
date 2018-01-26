@@ -32,6 +32,7 @@
             }else if(file_exists("{$app_path}Libs/{$class}.php")){
                 $classFile =  "{$app_path}Libs/{$class}.php";
             }else if(file_exists("{$app_path}Models/{$class}.php")){
+                $instantiable = false;
                 $classFile =  "{$app_path}Models/{$class}.php";
             }else if(file_exists("{$core_path}Classes/Exception/{$class}.php")) {
                 $instantiable = false;
