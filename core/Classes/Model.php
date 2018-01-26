@@ -34,8 +34,9 @@ class Model
     {
         if (isset($this->id)) {
             if (method_exists($this, $prop)) {
-                $this->$prop();
+                $this->$prop = $this->$prop();
             }
+            return $this->$prop;
         }
     }
 
@@ -104,22 +105,17 @@ class Model
      */
     protected function hasMany($relation = '', $foreignKey = '', $primaryKey = 'id')
     {
-        $propsName = debug_backtrace()[1]['function'];
-        if ( ! isset($this->$propsName)) {
-            /**
-             * @var \Model $class
-             */
-            $class = new $relation();
-            $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $this->table . '`.`' . $primaryKey . '` = `' . $class->table . '`.`' . $foreignKey . '` WHERE `' . $this->table . '`.`' . $primaryKey . '` = ?';
-            self::$query->query($query, [
-                $this->$primaryKey
-            ]);
-            $data = self::$query->fetchAllKV();
-            $propsName = debug_backtrace()[1]['function'];
-            $this->$propsName = self::makeArrayOfObject($data, $relation);
-        }
+        /**
+         * @var \Model $class
+         */
+        $class = new $relation();
+        $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $this->table . '`.`' . $primaryKey . '` = `' . $class->table . '`.`' . $foreignKey . '` WHERE `' . $this->table . '`.`' . $primaryKey . '` = ?';
+        self::$query->query($query, [
+            $this->$primaryKey
+        ]);
+        $data = self::$query->fetchAllKV();
 
-        return $this->$propsName;
+        return self::makeArrayOfObject($data, $relation);
     }
 
     /**
@@ -130,22 +126,18 @@ class Model
      */
     protected function hasOne($relation = '', $foreignKey = '', $primaryKey = 'id')
     {
-        $propsName = debug_backtrace()[1]['function'];
-        if ( ! isset($this->$propsName)) {
-            /**
-             * @var \Model $class
-             */
-            $class = new $relation();
-            $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $this->table . '`.`' . $primaryKey . '` = `' . $class->table . '`.`' . $foreignKey . '` WHERE `' . $this->table . '`.`' . $primaryKey . '` = ?';
-            self::$query->query($query, [
-                $this->$primaryKey
-            ]);
-            $data = self::$query->fetchAllKV()[0];
-            $data = self::makeObject($data);
-            $this->$propsName = $data;
-        }
+        /**
+         * @var \Model $class
+         */
+        $class = new $relation();
+        $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $this->table . '`.`' . $primaryKey . '` = `' . $class->table . '`.`' . $foreignKey . '` WHERE `' . $this->table . '`.`' . $primaryKey . '` = ?';
+        self::$query->query($query, [
+            $this->$primaryKey
+        ]);
+        $data = self::$query->fetchAllKV()[0];
+        $data = self::makeObject($data, $relation);
 
-        return $this->$propsName;
+        return $data;
     }
 
     /**
@@ -156,22 +148,18 @@ class Model
      */
     protected function belongsTo($relation = '', $foreignKey = '', $primaryKey = 'id')
     {
-        $propsName = debug_backtrace()[1]['function'];
-        if ( ! isset($this->$propsName)) {
-            /**
-             * @var \Model $class
-             */
-            $class = new $relation();
-            $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $class->table . '`.`' . $primaryKey . '` = `' . $this->table . '`.`' . $foreignKey . '` WHERE `' . $class->table . '`.`' . $primaryKey . '` = ?';
-            self::$query->query($query, [
-                $this->$primaryKey
-            ]);
-            $data = self::$query->fetchAllKV()[0];
-            $data = self::makeObject($data);
-            $this->$propsName = $data;
-        }
+        /**
+         * @var \Model $class
+         */
+        $class = new $relation();
+        $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $class->table . '`.`' . $primaryKey . '` = `' . $this->table . '`.`' . $foreignKey . '` WHERE `' . $class->table . '`.`' . $primaryKey . '` = ?';
+        self::$query->query($query, [
+            $this->$primaryKey
+        ]);
+        $data = self::$query->fetchAllKV()[0];
+        $data = self::makeObject($data, $relation);
 
-        return $this->$propsName;
+        return $data;
     }
 
     /**
@@ -185,7 +173,7 @@ class Model
         $model = Session::get('class-' . static::class);
         self::$query->query('SELECT * FROM `' . $model->table . '`');
         $data = self::$query->fetchAllKV();
-        $data = self::makeArrayOfObject($data);
+        $data = self::makeArrayOfObject($data, $model);
 
         return (self::$query->num_rows === 0) ? null : $data;
     }
@@ -218,7 +206,7 @@ class Model
         $query = substr($query, 0, -4);
         self::$query->query($query, $where);
         $data = self::$query->fetchAllKV();
-        $data = self::makeArrayOfObject($data);
+        $data = self::makeArrayOfObject($data, $model);
 
         return $data;
     }

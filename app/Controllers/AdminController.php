@@ -8,7 +8,7 @@ class AdminController extends Controller
         if ( ! Auth::user()) {
             Request::redirect(route('admin.login'));
         } else {
-            dd(Auth::user()->getSales());
+            dd(Auth::user());
         }
     }
 
