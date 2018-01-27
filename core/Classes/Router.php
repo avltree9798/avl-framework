@@ -24,7 +24,7 @@ class Router
      */
     protected $middleware_route = [
         'csrf' => [
-            'admin.do.login'
+            ''
         ]
     ];
 
@@ -135,7 +135,7 @@ class Router
                     preg_match('/{[^\s]+}/', $part, $matches);
                     if ($matches) {
                         $this->params[] = Router::uri($key);
-                        $allPart .= $part;
+                        $allPart .= Router::uri($key);
                     } else {
                         $allPart .= $part;
                     }
