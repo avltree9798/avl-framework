@@ -76,7 +76,8 @@ class Model
         /**
          * @var \Model $model
          */
-        $model = Session::get('class-' . static::class);
+        $class = static::class;
+        $model = new $class();
         self::$query->query('SELECT * FROM `' . $model->table . '` WHERE `id` = ?', [
             $id
         ]);
@@ -211,7 +212,8 @@ class Model
         /**
          * @var \Model $model
          */
-        $model = Session::get('class-' . static::class);
+        $class = static::class;
+        $model = new $class();
         self::$query->query('SELECT * FROM `' . $model->table . '`');
         $data = self::$query->fetchAllKV();
         $data = self::makeArrayOfObject($data, $model);
@@ -236,7 +238,8 @@ class Model
      */
     public static function execute()
     {
-        $model = Session::get('class-' . static::class);
+        $class = static::class;
+        $model = new $class();
         $query = 'SELECT * FROM `' . $model->table . '` WHERE';
         $where = [];
         foreach (self::$wheres as $col => $val) {
