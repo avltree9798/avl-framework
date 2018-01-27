@@ -41,8 +41,8 @@
       <file leaf-file-name="Compiler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+            <state relative-caret-position="360">
+              <caret line="43" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -371,7 +371,7 @@
       <workItem from="1517039431798" duration="39000" />
       <workItem from="1517039481793" duration="23000" />
       <workItem from="1517045586547" duration="87000" />
-      <workItem from="1517046428422" duration="7000" />
+      <workItem from="1517046428422" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="Create minimum stability to composer.json">
       <created>1516904639840</created>
@@ -384,7 +384,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54067000" />
+    <option name="totallyTimeSpent" value="55385000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="16" width="1920" height="1053" extended-state="6" />
@@ -622,8 +622,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        <state relative-caret-position="360">
+          <caret line="43" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
           <folding />
         </state>
       </provider>
