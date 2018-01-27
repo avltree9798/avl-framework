@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f564e014-bcb5-4ab3-bccd-689db96f8572" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Classes/Auth.php" afterPath="$PROJECT_DIR$/core/Classes/Auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Classes/Template/Compiler.php" afterPath="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Classes/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="44" column="47" lean-forward="false" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+            <state relative-caret-position="693">
+              <caret line="44" column="47" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Compiler.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -184,7 +195,6 @@
         <option value="$PROJECT_DIR$/storage/logs/avl-2018-01-26.log" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/avl" />
-        <option value="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
         <option value="$PROJECT_DIR$/storage/sessions/sess_i996jsp2trn6stlborhbjh37rq" />
         <option value="$PROJECT_DIR$/app/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/core/autoload.php" />
@@ -201,6 +211,7 @@
         <option value="$PROJECT_DIR$/core/Classes/Model.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/core/Classes/Auth.php" />
+        <option value="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
       </list>
     </option>
   </component>
@@ -265,6 +276,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,7 +325,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,7 +370,8 @@
       <workItem from="1517038564305" duration="108000" />
       <workItem from="1517039431798" duration="39000" />
       <workItem from="1517039481793" duration="23000" />
-      <workItem from="1517045586547" duration="38000" />
+      <workItem from="1517045586547" duration="87000" />
+      <workItem from="1517046428422" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Create minimum stability to composer.json">
       <created>1516904639840</created>
@@ -372,7 +384,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54011000" />
+    <option name="totallyTimeSpent" value="54067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="16" width="1920" height="1053" extended-state="6" />
@@ -492,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="40" column="67" lean-forward="false" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -609,8 +614,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="44" column="47" lean-forward="false" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+        <state relative-caret-position="693">
+          <caret line="44" column="47" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
           <folding />
         </state>
       </provider>
