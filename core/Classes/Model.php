@@ -310,4 +310,21 @@ class Model
         }
     }
 
+    /**
+     * @return $this
+     */
+    public function delete()
+    {
+        if (isset($this->{$this->primaryKey})) {
+            $queryBuilder = self::$query;
+            $query = "DELETE FROM `{$this->table}` WHERE `{$this->table}`.`{$this->primaryKey}` = ?";
+            $params = [
+                $this->{$this->primaryKey}
+            ];
+            $queryBuilder->query($query, $params);
+        }
+
+        return $this;
+    }
+
 }
