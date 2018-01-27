@@ -81,8 +81,12 @@ class Model
         self::$query->query('SELECT * FROM `' . $model->table . '` WHERE `id` = ?', [
             $id
         ]);
-        $data = self::$query->fetchAllKV()[0];
-        $data = self::makeObject($data, $model);
+        $data = self::$query->fetchAllKV();
+        if (count($data)) {
+            $data = self::makeObject($data, $relation);
+        } else {
+            $data = null;
+        }
 
         return (self::$query->num_rows === 0) ? null : $data;
     }
@@ -176,8 +180,12 @@ class Model
         self::$query->query($query, [
             $this->$primaryKey
         ]);
-        $data = self::$query->fetchAllKV()[0];
-        $data = self::makeObject($data, $relation);
+        $data = self::$query->fetchAllKV();
+        if (count($data)) {
+            $data = self::makeObject($data, $relation);
+        } else {
+            $data = null;
+        }
 
         return $data;
     }
@@ -199,8 +207,12 @@ class Model
 
             $this->$foreignKey
         ]);
-        $data = self::$query->fetchAllKV()[0];
-        $data = self::makeObject($data, $relation);
+        $data = self::$query->fetchAllKV();
+        if (count($data)) {
+            $data = self::makeObject($data, $relation);
+        } else {
+            $data = null;
+        }
 
         return $data;
     }
