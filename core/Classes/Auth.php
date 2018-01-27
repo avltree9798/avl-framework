@@ -42,7 +42,7 @@ class Auth
     {
         $user = User::find($id);
         if ($user) {
-            Session::set('user', $user);
+            Session::set('user', $user->getId());
         }
 
         return Auth::user();
