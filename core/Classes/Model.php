@@ -196,7 +196,8 @@ class Model
         $class = new $relation();
         $query = 'SELECT `' . $class->table . '`.* FROM `' . $this->table . '` JOIN `' . $class->table . '` ON `' . $class->table . '`.`' . $primaryKey . '` = `' . $this->table . '`.`' . $foreignKey . '` WHERE `' . $class->table . '`.`' . $primaryKey . '` = ?';
         self::$query->query($query, [
-            $this->$primaryKey
+
+            $this->$foreignKey
         ]);
         $data = self::$query->fetchAllKV()[0];
         $data = self::makeObject($data, $relation);
