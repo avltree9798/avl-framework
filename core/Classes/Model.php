@@ -2,12 +2,15 @@
 
 class Model
 {
+    /**
+     * @var \MYSQLDatabaseDriver
+     */
     private static $query;
 
     /**
      * @var string
      */
-    protected $table;
+    protected $table = '';
 
     /**
      * @var array
@@ -17,7 +20,22 @@ class Model
     /**
      * @var array
      */
-    protected static $wheres;
+    protected $fillable = [];
+
+    /**
+     * @var array
+     */
+    protected static $wheres = [];
+
+    /**
+     * @var array
+     */
+    protected $casts = [];
+
+    /**
+     * @var string
+     */
+    protected $primaryKey = 'id';
 
     /**
      * Model constructor.
@@ -30,13 +48,22 @@ class Model
         Session::set('class-' . static::class, $this);
     }
 
+    /**
+     * @param string $prop
+     * @return null
+     */
     public function __get($prop)
     {
         if (isset($this->id)) {
             if (method_exists($this, $prop)) {
                 $this->$prop = $this->$prop();
+
+                return $this->$prop;
+            } else {
+                return null;
             }
-            return $this->$prop;
+        } else {
+            return null;
         }
     }
 
@@ -54,7 +81,7 @@ class Model
             $id
         ]);
         $data = self::$query->fetchAllKV()[0];
-        $data = self::makeObject($data);
+        $data = self::makeObject($data, $model);
 
         return (self::$query->num_rows === 0) ? null : $data;
     }
@@ -71,9 +98,23 @@ class Model
          */
         $object = new $className();
         foreach ($array as $key => $value) {
-            if ( ! in_array($key, $object->hidden)) {
-                $object->$key = $value;
+            if (array_key_exists($key, $object->casts)) {
+                switch ($object->casts[$key]) {
+                    case 'int':
+                        $value = (int) $value;
+                        break;
+                    case 'double':
+                        $value = (double) $value;
+                        break;
+                    case 'float':
+                        $value = (float) $value;
+                        break;
+                    case 'bool':
+                        $value = (bool) $value;
+                        break;
+                }
             }
+            $object->$key = $value;
         }
 
         return $object;
@@ -209,6 +250,64 @@ class Model
         $data = self::makeArrayOfObject($data, $model);
 
         return $data;
+    }
+
+    public static function create($properties)
+    {
+        /**
+         * @var \Model $obj
+         */
+        $class = static::class;
+        $obj = new $class();
+        foreach ($properties as $key => $value) {
+            if (in_array($key, $obj->fillable)) {
+                $obj->$key = $value;
+            }
+        }
+
+        return $obj;
+    }
+
+    /**
+     * @return object|\stdClass
+     */
+    public function save()
+    {
+        $fillable = $this->fillable;
+        if (count($fillable)) {
+            $params = [];
+            $id = -1;
+            if (property_exists($this, $this->primaryKey)) {
+                $id = $this->{$this->primaryKey};
+                $query = "UPDATE `{$this->table}` SET";
+                foreach ($fillable as $f) {
+                    $query .= " `{$f}` = ?, ";
+                    $params[] = $this->$f;
+                }
+                $query = substr($query, 0, -2);
+                $query .= " WHERE `{$this->primaryKey}` = ?";
+                $params[] = $this->{$this->primaryKey};
+            } else {
+                $query = "INSERT INTO `{$this->table}` ({$this->primaryKey},";
+                $values = "(NULL,";
+                foreach ($fillable as $f) {
+                    $query .= "{$f},";
+                    $params[] = $this->$f;
+                    $values .= "?,";
+                }
+                $values = substr($values, 0, -1);
+                $query = substr($query, 0, -1);
+                $query .= ')';
+                $values .= ')';
+                $query = $query . ' VALUES ' . $values;
+            }
+
+            $queryBuilder = self::$query;
+            $queryBuilder->query($query, $params);
+            $id = $id === -1 ? $queryBuilder->currentId() : $id;
+
+            return static::find($id);
+        }
     }
 
 }

@@ -116,7 +116,6 @@ class MYSQLDatabaseDriver
                         $this->lengths = 0;
                     }
                     $this->error = $stmt->error;
-
                     return $this->result;
                 } else {
                     $this->current_field = '';
@@ -189,7 +188,7 @@ class MYSQLDatabaseDriver
 
     public function currentId()
     {
-        return $this->result->insert_id;
+        return $this->socket->insert_id;
     }
 
     /**
