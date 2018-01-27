@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f564e014-bcb5-4ab3-bccd-689db96f8572" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers.php" afterPath="$PROJECT_DIR$/app/helpers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Classes/Model.php" afterPath="$PROJECT_DIR$/core/Classes/Model.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +42,7 @@
       <file leaf-file-name="Compiler.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
+            <state relative-caret-position="1350">
               <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
               <folding />
             </state>
@@ -68,25 +69,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Classes/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
+            <state relative-caret-position="720">
               <caret line="345" column="1" lean-forward="false" selection-start-line="345" selection-start-column="1" selection-end-line="345" selection-end-column="1" />
               <folding>
-                <marker date="1517058761253" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
-                <marker date="1517058761253" expanded="true" signature="5979:6016" ph="SELECT * FRO... ${$model-&gt;table}" />
-                <marker date="1517058761253" expanded="true" signature="6610:6653" ph="SELECT * FRO... ${$model-&gt;table}" />
-                <marker date="1517058761253" expanded="true" signature="8142:8170" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-                <marker date="1517058761253" expanded="true" signature="8142:8172" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-                <marker date="1517058761253" expanded="true" signature="8142:8178" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-                <marker date="1517058761253" expanded="true" signature="8142:8192" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-                <marker date="1517058761253" expanded="true" signature="9043:9055" ph="DELETE FROM " />
-                <marker date="1517058761253" expanded="true" signature="9043:9078" ph="DELETE FROM " />
-                <marker date="1517058761253" expanded="true" signature="9043:9094" ph="DELETE FROM " />
-                <marker date="1517058761253" expanded="true" signature="9043:9096" ph="DELETE FROM " />
-                <marker date="1517058761253" expanded="true" signature="9043:9116" ph="DELETE FROM " />
-                <marker date="1517058761253" expanded="true" signature="9043:9120" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
+                <marker date="1517058954622" expanded="true" signature="5985:6022" ph="SELECT * FRO... ${$model-&gt;table}" />
+                <marker date="1517058954622" expanded="true" signature="6616:6659" ph="SELECT * FRO... ${$model-&gt;table}" />
+                <marker date="1517058954622" expanded="true" signature="8148:8176" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+                <marker date="1517058954622" expanded="true" signature="8148:8178" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+                <marker date="1517058954622" expanded="true" signature="8148:8184" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+                <marker date="1517058954622" expanded="true" signature="8148:8198" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+                <marker date="1517058954622" expanded="true" signature="9049:9061" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="9049:9084" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="9049:9100" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="9049:9102" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="9049:9122" ph="DELETE FROM " />
+                <marker date="1517058954622" expanded="true" signature="9049:9126" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -97,6 +98,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3420">
               <caret line="190" column="28" lean-forward="false" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2754">
+              <caret line="153" column="1" lean-forward="false" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -207,7 +218,6 @@
         <option value="$PROJECT_DIR$/storage/sessions/sess_i996jsp2trn6stlborhbjh37rq" />
         <option value="$PROJECT_DIR$/app/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/core/autoload.php" />
-        <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/resources/views/main/header.avl.php" />
         <option value="$PROJECT_DIR$/resources/views/main/anjay.avl.php" />
         <option value="$PROJECT_DIR$/resources/views/main/index.avl.php" />
@@ -222,6 +232,7 @@
         <option value="$PROJECT_DIR$/core/Classes/Router.php" />
         <option value="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
         <option value="$PROJECT_DIR$/core/Classes/Model.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
       </list>
     </option>
   </component>
@@ -285,6 +296,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,7 +345,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -386,7 +397,9 @@
       <workItem from="1517057860634" duration="63000" />
       <workItem from="1517058280830" duration="33000" />
       <workItem from="1517058369527" duration="48000" />
-      <workItem from="1517058758019" duration="11000" />
+      <workItem from="1517058758019" duration="73000" />
+      <workItem from="1517058953853" duration="6000" />
+      <workItem from="1517060717554" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="Create minimum stability to composer.json">
       <created>1516904639840</created>
@@ -399,7 +412,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55657000" />
+    <option name="totallyTimeSpent" value="55731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="16" width="1920" height="1053" extended-state="6" />
@@ -528,14 +541,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/MainController.php" />
-    <entry file="file://$PROJECT_DIR$/app/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/main/header.avl.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/main/index.avl.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/main/footer.avl.php" />
@@ -615,7 +620,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
+        <state relative-caret-position="1350">
           <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
           <folding />
         </state>
@@ -623,23 +628,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
+        <state relative-caret-position="720">
           <caret line="345" column="1" lean-forward="false" selection-start-line="345" selection-start-column="1" selection-end-line="345" selection-end-column="1" />
           <folding>
-            <marker date="1517058761253" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
-            <marker date="1517058761253" expanded="true" signature="5979:6016" ph="SELECT * FRO... ${$model-&gt;table}" />
-            <marker date="1517058761253" expanded="true" signature="6610:6653" ph="SELECT * FRO... ${$model-&gt;table}" />
-            <marker date="1517058761253" expanded="true" signature="8142:8170" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-            <marker date="1517058761253" expanded="true" signature="8142:8172" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-            <marker date="1517058761253" expanded="true" signature="8142:8178" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-            <marker date="1517058761253" expanded="true" signature="8142:8192" ph="INSERT INTO `${{$this-&gt;table}}`... " />
-            <marker date="1517058761253" expanded="true" signature="9043:9055" ph="DELETE FROM " />
-            <marker date="1517058761253" expanded="true" signature="9043:9078" ph="DELETE FROM " />
-            <marker date="1517058761253" expanded="true" signature="9043:9094" ph="DELETE FROM " />
-            <marker date="1517058761253" expanded="true" signature="9043:9096" ph="DELETE FROM " />
-            <marker date="1517058761253" expanded="true" signature="9043:9116" ph="DELETE FROM " />
-            <marker date="1517058761253" expanded="true" signature="9043:9120" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
+            <marker date="1517058954622" expanded="true" signature="5985:6022" ph="SELECT * FRO... ${$model-&gt;table}" />
+            <marker date="1517058954622" expanded="true" signature="6616:6659" ph="SELECT * FRO... ${$model-&gt;table}" />
+            <marker date="1517058954622" expanded="true" signature="8148:8176" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+            <marker date="1517058954622" expanded="true" signature="8148:8178" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+            <marker date="1517058954622" expanded="true" signature="8148:8184" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+            <marker date="1517058954622" expanded="true" signature="8148:8198" ph="INSERT INTO `${{$this-&gt;table}}`... " />
+            <marker date="1517058954622" expanded="true" signature="9049:9061" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="9049:9084" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="9049:9100" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="9049:9102" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="9049:9122" ph="DELETE FROM " />
+            <marker date="1517058954622" expanded="true" signature="9049:9126" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="153" column="1" lean-forward="false" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

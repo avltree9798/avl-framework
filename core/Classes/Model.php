@@ -182,7 +182,7 @@ class Model
         ]);
         $data = self::$query->fetchAllKV();
         if (count($data)) {
-            $data = self::makeObject($data, $relation);
+            $data = self::makeObject($data[0], $relation);
         } else {
             $data = null;
         }
@@ -209,7 +209,7 @@ class Model
         ]);
         $data = self::$query->fetchAllKV();
         if (count($data)) {
-            $data = self::makeObject($data, $relation);
+            $data = self::makeObject($data[0], $relation);
         } else {
             $data = null;
         }

@@ -22,17 +22,33 @@ if ( ! function_exists('assets')) {
 if ( ! function_exists('route')) {
     /**
      * @param string $route
+     * @param array  $params
      * @return string
      */
-    function route($route = '')
+    function route($route = '', $params = [])
     {
         foreach ($GLOBALS['config']['routes'] as $r) {
             if ($r['name'] == $route) {
-                return $GLOBALS['config']['domain'] . $r['url'];
+                $url = explode('/', $r['url']);
+                $uri = '';
+                $index = 0;
+                foreach ($url as $u) {
+                    if($u==='')continue;
+                    preg_match('/{[^\s]+}/', $u, $matches);
+                    if ($matches) {
+                        $uri .= '/'.$params[$index++];
+                    } else {
+                        $uri .=  '/'.$u;
+                    }
+                }
+
+                return $GLOBALS['config']['domain'] . $uri;
             }
         }
 
-        return new RouteNotFound(404, $route);
+        $error = new RouteNotFound(404, $route);
+        $error->show();
+        return null;
     }
 }
 
@@ -109,7 +125,7 @@ if ( ! function_exists('cast')) {
      * Class casting
      *
      * @param string|object $destination
-     * @param object $sourceObject
+     * @param object        $sourceObject
      * @return object
      */
     function cast($destination, $sourceObject)
@@ -127,12 +143,12 @@ if ( ! function_exists('cast')) {
             if ($destinationReflection->hasProperty($name)) {
                 $propDest = $destinationReflection->getProperty($name);
                 $propDest->setAccessible(true);
-                $propDest->setValue($destination,$value);
+                $propDest->setValue($destination, $value);
             } else {
                 $destination->$name = $value;
             }
         }
+
         return $destination;
     }
-
 }
