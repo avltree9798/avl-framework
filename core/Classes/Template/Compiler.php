@@ -39,6 +39,8 @@ class Compiler
         $contents = preg_replace('/@foreach\((.*?)\)@/', '<?php foreach($1){ ?>', $contents);
         $contents = preg_replace('/@endforeach@/', '<?php } ?>', $contents);
         $contents = preg_replace('/@if\((.*?)\)@/', '<?php if($1){ ?>', $contents);
+        $contents = preg_replace('/@elseif\((.*?)\)@/', '<?php }else if($1){ ?>', $contents);
+        $contents = preg_replace('/@else@/', '<?php } else { ?>', $contents);
         $contents = preg_replace('/@endif@/', '<?php } ?>', $contents);
         $contents = preg_replace('/@php\((.*?)\)@/', '<?php $1; ?>', $contents);
         $contents = preg_replace('/@dd\((.*?)\)@/', '<?php dd($1); ?>', $contents);
@@ -49,7 +51,7 @@ class Compiler
             $start = strpos($str, '\'');
             $end = strpos($str, '\'', $start + 1);
             $length = $end - $start;
-            $result = $GLOBALS['config']['path']['view'].substr($str, $start + 1, $length - 1) . '.avl.php';
+            $result = $GLOBALS['config']['path']['view'] . substr($str, $start + 1, $length - 1) . '.avl.php';
 
             return $self->toHTMLPHP($result);
         }, $contents);

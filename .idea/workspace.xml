@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f564e014-bcb5-4ab3-bccd-689db96f8572" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Classes/Model.php" afterPath="$PROJECT_DIR$/core/Classes/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Classes/Template/Compiler.php" afterPath="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compiler.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Compiler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="828">
+              <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Classes/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
+            <state relative-caret-position="774">
               <caret line="345" column="1" lean-forward="false" selection-start-line="345" selection-start-column="1" selection-end-line="345" selection-end-column="1" />
               <folding>
                 <marker date="1517058282975" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
@@ -219,9 +219,9 @@
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/core/Classes/Auth.php" />
-        <option value="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
         <option value="$PROJECT_DIR$/core/Classes/Router.php" />
         <option value="$PROJECT_DIR$/core/Classes/Model.php" />
+        <option value="$PROJECT_DIR$/core/Classes/Template/Compiler.php" />
       </list>
     </option>
   </component>
@@ -285,7 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -335,6 +334,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,7 +384,8 @@
       <workItem from="1517046428422" duration="1367000" />
       <workItem from="1517056278497" duration="75000" />
       <workItem from="1517057860634" duration="63000" />
-      <workItem from="1517058280830" duration="4000" />
+      <workItem from="1517058280830" duration="33000" />
+      <workItem from="1517058369527" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="Create minimum stability to composer.json">
       <created>1516904639840</created>
@@ -397,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55569000" />
+    <option name="totallyTimeSpent" value="55603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="16" width="1920" height="1053" extended-state="6" />
@@ -595,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -621,7 +614,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Classes/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
+        <state relative-caret-position="774">
           <caret line="345" column="1" lean-forward="false" selection-start-line="345" selection-start-column="1" selection-end-line="345" selection-end-column="1" />
           <folding>
             <marker date="1517058282975" expanded="true" signature="1552:1604" ph="SELECT * FRO... ${$model-&gt;table}" />
@@ -638,6 +631,14 @@
             <marker date="1517058282975" expanded="true" signature="9083:9156" ph="DELETE FROM " />
             <marker date="1517058282975" expanded="true" signature="9083:9160" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Classes/Template/Compiler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
