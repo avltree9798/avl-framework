@@ -126,6 +126,7 @@ class Router
     {
         $return = null;
         foreach ($this->routes as $route) {
+            $this->params = [];
             $parts = $this->routerPart($route);
             $allUri = implode('', $this->routerPart($_SERVER['REQUEST_URI']));
             $allUri = explode('?', $allUri)[0];
