@@ -17,7 +17,7 @@ class Auth
      */
     public static function user()
     {
-        return (Session::check('user')) ? Session::get('user') : false;
+        return (Session::check('user')) ? self::$model::find(Session::get('user')) : false;
     }
 
     /**
@@ -30,6 +30,7 @@ class Auth
         $model = self::$model;
         $check = self::$check;
         $result = $model::where($check[0], $email)->where($check[1], $password)->execute()[0];
+
         return $result;
     }
 
