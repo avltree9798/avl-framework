@@ -25,6 +25,11 @@ class Model
     /**
      * @var array
      */
+    private $fetchFromDatabase = [];
+
+    /**
+     * @var array
+     */
     protected static $wheres = [];
 
     /**
@@ -60,7 +65,11 @@ class Model
 
                 return $this->$prop;
             } else {
-                return null;
+                if (isset($this->fetchFromDatabase[$prop])) {
+                    return $this->fetchFromDatabase[$prop];
+                } else {
+                    return null;
+                }
             }
         } else {
             return null;
@@ -102,6 +111,7 @@ class Model
          * @var \Model $object
          */
         $object = new $className();
+        $object->fetchFromDatabase = $array;
         foreach ($array as $key => $value) {
             if (array_key_exists($key, $object->casts)) {
                 switch ($object->casts[$key]) {
@@ -119,7 +129,9 @@ class Model
                         break;
                 }
             }
-            $object->$key = $value;
+            if ( ! array_key_exists($key, $object->hidden)) {
+                $object->$key = $value;
+            }
         }
 
         return $object;
@@ -343,4 +355,15 @@ class Model
         return $this;
     }
 
+    public function __debugInfo()
+    {
+        $modelData = [];
+        foreach ($this->fetchFromDatabase as $key => $item) {
+            if ( !in_array($key, $this->hidden)) {
+                $modelData[$key] = $item;
+            }
+        }
+
+        return $modelData;
+    }
 }

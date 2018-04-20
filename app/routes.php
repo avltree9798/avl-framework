@@ -8,3 +8,4 @@
  *
  *
  */
+Router::get('/','HomeController@index','www.index');

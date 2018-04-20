@@ -46,6 +46,7 @@
             }else if(file_exists("{$core_path}Classes/Template/{$class}.php")){
                 $classFile = "{$core_path}Classes/Template/{$class}.php";
             }
+
             if ($GLOBALS['config']['cache_enabled']) {
                 $locations[$class] = [
                     'instantiable' => $instantiable,
@@ -62,6 +63,7 @@
                 foreach($GLOBALS['instances'] as $instance){
                     $instance->class = new $class();
                 }
+
             }
         }
 

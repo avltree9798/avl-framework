@@ -70,6 +70,7 @@ class Router
     /**
      * @param string $uri
      * @param string $controller
+     * @param string $name
      * @param string $type
      */
     private static function pushRoute($uri, $controller, $name, $type)
@@ -146,13 +147,15 @@ class Router
                 $return = 403;
             }
             if ($allPart . $route['type'] == $allUri . $_SERVER['REQUEST_METHOD']) {
-                foreach ($this->middleware_route as $middleware => $mr) {
-                    if (in_array($route['name'], $mr)) {
-                        /**
-                         * @var \Middleware @md
-                         */
-                        $md = new $this->middlewares[$middleware]();
-                        $md->handle();
+                if(trim($route['name'])!=='') {
+                    foreach ($this->middleware_route as $middleware => $mr) {
+                        if (in_array($route['name'], $mr)) {
+                            /**
+                             * @var \Middleware @md
+                             */
+                            $md = new $this->middlewares[$middleware]();
+                            $md->handle();
+                        }
                     }
                 }
                 $return = $route;

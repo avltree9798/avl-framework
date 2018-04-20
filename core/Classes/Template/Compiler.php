@@ -62,7 +62,7 @@ class Compiler
     public function render()
     {
         if (file_exists($this->viewFile)) {
-            $file_content = $GLOBALS['config']['path']['cache_view'] . md5(file_get_contents($this->viewFile));
+            $file_content = $GLOBALS['config']['path']['cache_view'] . md5(file_get_contents($this->viewFile)).'.php';
             if ( ! file_exists($file_content)) {
                 $contents = $this->toHTMLPHP($this->viewFile);
                 file_put_contents($file_content, $contents);

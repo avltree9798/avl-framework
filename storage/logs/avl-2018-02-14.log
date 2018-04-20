@@ -1,0 +1,12 @@
+[14-Feb-2018 01:42:47 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:42:51 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:42:51 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:43:20 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:44:03 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:44:14 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:47:15 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:47:46 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:48:05 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:48:08 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:48:10 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11
+[14-Feb-2018 01:50:27 Asia/Jakarta] PHP Warning:  hash_equals(): Expected known_string to be a string, boolean given in /home/avltree/anjay/AVLFramework/core/Classes/Middleware/CsrfValidation.php on line 11

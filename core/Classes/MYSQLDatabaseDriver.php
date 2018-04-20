@@ -1,5 +1,4 @@
 <?php
-
 class MYSQLDatabaseDriver
 {
     /**
@@ -27,10 +26,7 @@ class MYSQLDatabaseDriver
      */
     public $num_rows;
 
-    public function __construct()
-    {
-    }
-
+    
     public function connect($host, $username, $password, $database = null)
     {
 
@@ -39,14 +35,16 @@ class MYSQLDatabaseDriver
         } else {
             $this->socket = new mysqli($host, $username, $password, $database);
         }
+
+        return $this;
     }
 
-    /**
-     * @return void
-     */
+    
     public function changeDB($database)
     {
         $this->socket->select_db($database);
+
+        return $this;
     }
 
     /**
@@ -116,6 +114,7 @@ class MYSQLDatabaseDriver
                         $this->lengths = 0;
                     }
                     $this->error = $stmt->error;
+
                     return $this->result;
                 } else {
                     $this->current_field = '';

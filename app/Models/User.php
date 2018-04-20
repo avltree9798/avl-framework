@@ -9,4 +9,16 @@
 class User extends Model
 {
     protected $table = 'users';
+
+    /**
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'role_id',
+        'remember_token',
+        'deleted_at',
+        'created_at',
+        'id'
+    ];
 }
