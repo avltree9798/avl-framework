@@ -36,7 +36,7 @@ class Router
         $this->routes = $GLOBALS['config']['routes'];
         $route = $this->findRoute();
         $method = $route['method'];
-        if (class_exists($route['controller'])) {
+        if (is_string($route['controller']) && class_exists($route['controller'])) {
             $controller = new $route['controller']();
             if (method_exists($controller, $method)) {
                 if ($route['type'] === $_SERVER['REQUEST_METHOD']) {
@@ -51,7 +51,9 @@ class Router
             } else {
                 new MethodNotFound(404);
             }
-        } else {
+        } else if(is_callable($route['controller'])) {
+            return $route['controller']();
+        }else {
             new ClassNotFound(404);
         }
     }
@@ -75,9 +77,13 @@ class Router
      */
     private static function pushRoute($uri, $controller, $name, $type)
     {
-        $controller = explode('@', $controller);
-        $class = $controller[0];
-        $method = $controller[1];
+        $class = $controller;
+        $method = '';
+        if(is_string($controller)) {
+            $controller = explode('@', $controller);
+            $class = $controller[0];
+            $method = $controller[1];
+        }
         $GLOBALS['config']['routes'][] = [
             'url'        => $uri,
             'controller' => $class,

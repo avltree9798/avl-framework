@@ -1,0 +1,28 @@
+[14-Sep-2018 14:53:12 Asia/Jakarta] PHP Warning:  explode() expects parameter 2 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 78
+[14-Sep-2018 14:54:56 Asia/Jakarta] PHP Warning:  explode() expects parameter 2 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 80
+[14-Sep-2018 14:54:57 Asia/Jakarta] PHP Warning:  explode() expects parameter 2 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 80
+[14-Sep-2018 14:54:58 Asia/Jakarta] PHP Warning:  explode() expects parameter 2 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 80
+[14-Sep-2018 14:57:15 Asia/Jakarta] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Router::post(), 2 passed in /home/avltree/anjay/AVLFramework/app/routes.php on line 14 and exactly 3 expected in /home/avltree/anjay/AVLFramework/core/Classes/Router.php:111
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/app/routes.php(14): Router::post('/testong', Object(Closure))
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): require_once('/home/avltree/a...')
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 111
+[14-Sep-2018 14:58:03 Asia/Jakarta] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Router::post(), 2 passed in /home/avltree/anjay/AVLFramework/app/routes.php on line 14 and exactly 3 expected in /home/avltree/anjay/AVLFramework/core/Classes/Router.php:112
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/app/routes.php(14): Router::post('/testong', Object(Closure))
+#1 /home/avltree/anjay/AVLFramework/core/autoload.php(72): require_once('/home/avltree/a...')
+#2 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#3 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 112
+[14-Sep-2018 14:58:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function dd() in /home/avltree/anjay/AVLFramework/core/Classes/Router.php:88
+Stack trace:
+#0 /home/avltree/anjay/AVLFramework/core/Classes/Router.php(105): Router::pushRoute('/', Array, 'www.index', 'GET')
+#1 /home/avltree/anjay/AVLFramework/app/routes.php(11): Router::get('/', 'HomeController@...', 'www.index')
+#2 /home/avltree/anjay/AVLFramework/core/autoload.php(72): require_once('/home/avltree/a...')
+#3 /home/avltree/anjay/AVLFramework/index.php(39): require_once('/home/avltree/a...')
+#4 {main}
+  thrown in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 88
+[14-Sep-2018 15:00:06 Asia/Jakarta] PHP Warning:  class_exists() expects parameter 1 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 39
+[14-Sep-2018 15:00:14 Asia/Jakarta] PHP Warning:  class_exists() expects parameter 1 to be string, object given in /home/avltree/anjay/AVLFramework/core/Classes/Router.php on line 39

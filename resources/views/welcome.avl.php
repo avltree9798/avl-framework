@@ -1,2 +1,2 @@
 Welcome to AVL Framework {{ $name }}
-@php(dd(User::all()[0]))@
+@php(dd(User::all()))@
